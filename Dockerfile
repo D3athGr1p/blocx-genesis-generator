@@ -1,9 +1,9 @@
 FROM golang:1.22 as builder
-RUN git clone https://github.com/protolambda/eth2-testnet-genesis.git  \
+RUN git clone https://github.com/d3athgr1p/eth2-testnet-genesis.git  \
     && cd eth2-testnet-genesis \
     && go install . \
-    && go install github.com/protolambda/eth2-val-tools@latest \
-    && go install github.com/protolambda/zcli@latest
+    && go install github.com/d3athgr1p/eth2-val-tools@latest \
+    && go install github.com/d3athgr1p/zcli@latest
 
 FROM debian:latest
 WORKDIR /work
