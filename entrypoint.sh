@@ -218,6 +218,9 @@ gen_cl_config(){
           /data/metadata/genesis.ssz
         )
         fi
+        if [[ $MAX_EFFECTIVE_BALANCE != 1024000000000  ]]; then
+          genesis_args+=(--max-effective-balance $MAX_EFFECTIVE_BALANCE)
+        fi
         /usr/local/bin/eth2-testnet-genesis "${genesis_args[@]}"
         /usr/local/bin/zcli "${zcli_args[@]}" > /data/parsed/parsedConsensusGenesis.json
         echo "Genesis args: ${genesis_args[@]}"
