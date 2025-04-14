@@ -68,6 +68,9 @@ gen_cl_config(){
         else
           genesis_args+=(--eth1-config /data/custom_config_data/genesis.json)
         fi
+        if [[ $MAX_EFFECTIVE_BALANCE != 32000000000  ]]; then
+          genesis_args+=(--max-effective-balance $MAX_EFFECTIVE_BALANCE)
+        fi
         /usr/local/bin/eth2-testnet-genesis "${genesis_args[@]}"
         /usr/local/bin/zcli pretty capella BeaconState /data/custom_config_data/genesis.ssz > /data/custom_config_data/parsedBeaconState.json
         jq -r '.eth1_data.block_hash' /data/custom_config_data/parsedBeaconState.json > /data/custom_config_data/deposit_contract_block_hash.txt
