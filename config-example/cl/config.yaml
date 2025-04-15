@@ -1,6 +1,6 @@
 # Extends the mainnet preset
 PRESET_BASE: 'mainnet'
-CONFIG_NAME: testnet # needs to exist because of Prysm. Otherwise it conflicts with mainnet genesis
+CONFIG_NAME: BLOCX # needs to exist because of Prysm. Otherwise it conflicts with mainnet genesis
 
 # Genesis
 # ---------------------------------------------------------------
@@ -118,7 +118,6 @@ BLOB_SIDECAR_SUBNET_COUNT: 6
 # `uint64(6)`
 MAX_BLOBS_PER_BLOCK: 6
 
-EJECTION_BALANCE: $EJECTION_BALANCE
 MIN_DEPOSIT_AMOUNT: $MIN_DEPOSIT_AMOUNT
 MIN_ACTIVATION_BALANCE: $EFFECTIVE_BALANCE_INCREMENT
 MAX_EFFECTIVE_BALANCE: $EFFECTIVE_BALANCE_INCREMENT
